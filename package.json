@@ -1,0 +1,24 @@
+{
+  "name": "test-repo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mbutkiew/test-repo.git",
+  "author": "Michael Butkiewicz <mbutkiewicz@linkedin.com>",
+  "license": "MIT",
+  "scripts": {
+    "pretest": "eslint test-server acceptance-test",
+    "test": "yarn run build && mocha --recursive dist/acceptance-test --timeout 10000",
+    "build": "rimraf dist/ && babel test-server --out-dir dist/test-server --copy-files && babel acceptance-test --out-dir dist/acceptance-test --copy-files"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "eslint": "^5.4.0",
+    "express": "^4.16.3",
+    "mocha": "^5.2.0",
+    "puppeteer": "^1.7.0",
+    "rimraf": "^2.6.2"
+  }
+}

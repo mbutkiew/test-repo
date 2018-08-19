@@ -1,0 +1,12 @@
+<html><body>
+<script>
+window.addEventListener('beforeunload', async () => {
+  console.log('beforeunload listener');
+  const response = await fetch('/msg', {
+    method: 'POST',
+    body: 'Hi server'
+  });
+});
+</script>
+Hello World
+</body></html>

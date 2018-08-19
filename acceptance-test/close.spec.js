@@ -38,7 +38,7 @@ describe('Closing tab', () => {
     expect(await gotMessage()).to.be.false;
 
     await page.close({runBeforeUnload: true});
-    await wait(2000);
+    await wait(5000);
     expect(await gotMessage()).to.be.true;
   });
 });
